@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shanice Alexandra M. Perozo | Personal Portfolio </title>
+
+<style>
+   
+    
+        .about-me {
+            border: 3px solid #fabebe;
+            border-radius: 15px;
+            padding: 20px;
+            background: #e8babb;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+    
+  
+    body {  
+        background: linear-gradient(45deg, #ffc2d1, #fcb9b2, #ffccd5, #fabebe);
+        background-size: 400% 400%;
+        background-attachment: fixed;
+        animation: bgAnimation 10s ease infinite;
+        overflow: auto; /* Allows scrolling */
+        font-family: "Georgia", serif;
+        color: #a55454;
+        text-align: center;
+        margin: 0;
+        padding: 0; 
+    }
+    
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #playMusic {
+            background: #fbc3bc;
+            color: #b16969;
+            border: 2px solid #fabebe;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        #playMusic:hover {
+            background: #f7a8a8;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        #audio-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+    {
+        background: linear-gradient(45deg, #ffc2d1, #fcb9b2, #ffccd5, #fabebe);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: bgAnimation 10s ease infinite;
+    overflow: hidden;
+    font-family: "Georgia", serif;
+    color: #a55454;
+    text-align: center;
+    margin: 0;
+    padding: 0; 
+   
+    }
+    
+    @keyframes bgAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    
+    .particles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1; 
+    }
+    .particle {
+        position: absolute;
+        bottom: -20px;
+        width: 15px;
+        height: 15px;
+        background: rgba(255, 182, 193, 0.7);
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: floatUp 6s linear infinite;
+    }
+    
+  
+    @keyframes floatUp {
+        0% { transform: translateY(0px) scale(1); opacity: 0.8; }
+        50% { transform: translateY(-50vh) scale(1.2); opacity: 0.6; }
+        100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+        
+ 
+}
+.container {
+    background: #f4a3a7;
+    width: 80%; 
+    max-width: 1200px; 
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    border: 4px solid #fabebe;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.ribbon {
+position: absolute;
+top: -15px;
+left: 50%;
+transform: translateX(-50%);
+background: #fbc3bc;
+padding: 8px 35px;
+border-radius: 12px;
+font-weight: bold;
+color: #b16969;
+box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+font-size: 20px;
+border: 1px solid white;
+text-shadow: 1px 1px 2px white;
+}
+.profile-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+padding: 10px 0;
+}
+.profile-container img {
+border-radius: 50%;
+border: 4px solid #fabebe;
+transition: transform 0.3s ease;
+width: 120px;
+height: 120px;
+}
+.profile-container img:hover {
+transform: scale(1.05);
+}
+.profile-details {
+text-align: left;
+flex: 1;
+}
+h2 {
+cursor: pointer;
+display: inline-block;
+padding: 12px 25px;
+background: #fbc3bc;
+border-radius: 15px;
+color: #c36c6c;
+transition: all 0.3s ease;
+font-style: italic;
+box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+margin: 15px 0;
+font-size: 18px;
+}
+h2:hover {
+background: #f7a8a8;
+color: white;
+transform: translateY(-3px);
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+background: #ffe5ec;
+border-radius: 12px;
+display: none;
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+th, td {
+border: 2px solid #f7a8a8;
+padding: 14px;
+font-size: 16px;
+}
+th {
+background: #fabebe;
+color: white;
+font-weight: bold;
+}
+.visible {
+    display: table;
+    opacity: 1;
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        for (let i = 0; i < 20; i++) {
+            let bubble = document.createElement("div");
+            bubble.classList.add("particle");
+            bubble.style.left = Math.random() * 100 + "vw";
+            bubble.style.animationDuration = (Math.random() * 5 + 3) + "s";
+            document.body.appendChild(bubble);
+        }
+    });
+    
+    function toggleVisibility(id) {
+        let table = document.getElementById(id);
+        table.classList.toggle("visible");
+    }
+    
+
+</script>
+</head>
+<body>
+    <button id="playMusic">Play Music</button>
+    <audio id="bgMusic" loop>
+        <source src="lovecore.mp3.mp3" type="audio/mpeg">
+    </audio>
+  
+ 
+<div class="container">
+<div class="ribbon">⋆. 𐙚 ˚Shanice Alexandra M. Perozo ᰔ</div>
+<div class="profile-container">
+<img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/481305699_645621907963319_5003431088206935380_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHEo-nrBEM14obZ3WgxrcEv9tk200L3Yzz22TbTQvdjPPy-QSCYIXEej-JLOanK-y1uAMFcqIjcitDSvMVQSO0k&_nc_ohc=obAbW988oFoQ7kNvgG8dxRx&_nc_oc=AdmY3MGLMYov5zIwBqX5xafAnxZcl27r1En0NPbVAk1vqeJbs3Y7LlPOK5B1Mw5E65U&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=Dzb6ZE2YzAJvXUbXrT64lw&oh=00_AYExwkc0VKUA5U0YsThDVM95RPstOTA0z-y6DPDNzyyngQ&oe=67E744E2" alt="Left Image">
+<img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/480249822_637168228808687_1737814417956607107_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHh4WssEH3fmfLVnG4M3EAu6dQ9aOpbZPvp1D1o6ltk-4jXnZuar4tTykkq65QunE3XKYkDYn3UCtsjY4YCq7tW&_nc_ohc=1cdkWkqAfs0Q7kNvgHmAC_N&_nc_oc=Adlfg11FiU3JUUljIiAoa0pAp75YpIH8e_Nm4UR7dj0-bVG5Zj--Gkh1BFpy6AltgqU&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=qI8ALQW2Rnd6VeMod3d8Uw&oh=00_AYEvdTjCM-lxR6JMpmsjS5JtnxJogYMZ2k2XZSE-4x6jtw&oe=67E7310E" alt="Center Image">
+<img src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/472741778_607689175089926_5227861174817756945_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHyZi3yfntGa6MvzEuevxaQDBuf3FOZH64MG5_cU5kfrlaTtfOPXvkb1_bSFSDPTpDdMaaomFJsYm9ADE6sEdOQ&_nc_ohc=gg7x63lCJqcQ7kNvgGhnnZW&_nc_oc=AdlHACMCVE0B-iB63tn9gyUK1HUSHrynnG1uDmJYG5L88KtC2mzVnL6NxAiAgsfqY-U&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=rIBcDHJxt8jhojQ_S6m6RA&oh=00_AYHSp_3_SCAJIB0zaMbj1ZkpXRDM660pZ2VpHh_kZlaHHg&oe=67E71E4B" alt="Right Image">
+</div>
+<div class="about-me">
+<h3>About Me</h3>
+<p>Hi! I’m Shanice Alexandra M. Perozo, a dedicated Bachelor of Science in Information Systems (BSIS) student with a specialization in Accounting Technology. I’m passionate about learning how technology and business intersect, and I strive to develop my skills in both fields.</p>
+<p>My goal is to successfully complete my studies so I can support my family and build a stable future. Despite the challenges of my course, I remain determined, always pushing forward to improve myself and gain the knowledge I need to succeed.</p>
+<p>I believe that hard work and perseverance will help me achieve my dreams. Every challenge I face is an opportunity to grow, and I’m committed to making the most out of my journey in BSIS.</p>
+</div>
+<h2 onclick="toggleVisibility('personalInfo')">Personal Information 🌸</h2>
+<table id="personalInfo">
+<tr><th>Full Name</th><td>Shanice Alexandra M. Perozo</td></tr>
+<tr><th>Nickname</th><td>chanchan, batchan, shann</td></tr>
+<tr><th>Birth Date</th><td>October 30, 2004</td></tr>
+<tr><th>Age</th><td>20 years old</td></tr>
+<tr><th>Sex</th><td>Female</td></tr>
+<tr><th>Nationality</th><td>Filipino</td></tr>
+<tr><th>Civil Status</th><td>Single</td></tr>
+<tr><th>Address</th><td>Isla Verde Padayhag Uno, San Carlos Tukuran ZDS</td></tr>
+</table>
+
+<h2 onclick="toggleVisibility('contactInfo')">Contact Information 📞</h2>
+<table id="contactInfo">
+<tr><th>Email</th><td>pshanicealexandra@gmail.com</td></tr>
+<tr><th>Facebook</th><td>Shanice Alexandra Perozo</td></tr>
+<tr><th>Instagram</th><td>its.shanicea</td></tr>
+<tr><th>Phone</th><td>09950162478</td></tr>
+</table>
+
+<h2 onclick="toggleVisibility('education')">Educational Background 📚</h2>
+<table id="education">
+<tr><th>Level</td><td>School</td></tr>
+<tr><td>Primary</td><td>Sto Nino Central Elem. School</td></tr>
+<tr><td>Transfered & Graduated</td><td>Bomba Elementary School</td></tr>
+<tr><td>Secondary</td><td>Zamboanga Del Sur National High School</td></tr>
+<tr><td>Transfered & Graduated<td>Tukuran Technical Vocational High School (STEM)</td></tr>
+<tr><td>Tertiary</td><td>Zamboanga del Sur Provincial Government College (BSIS-ACT)</td></tr>
+</table>
+
+<h2 onclick="toggleVisibility('hobbies')">Hobbies & Interests 🎨</h2>
+<table id="hobbies">
+<tr><th>Hobbies</th><td>Drawing, Singing, Cooking</td></tr>
+<tr><th>Interests</th><td>Playing Volleyball, Watching Anime & Movies</td></tr>
+</table>
+
+<h2 onclick="toggleVisibility('familyBackground')">Family Background 👨‍👩‍👧‍👦</h2>
+<table id="familyBackground">
+    <tr><th>Father's Name</th><td>Julius O. Perozo</td></tr>
+    <tr><th>Mother's Name</th><td>Jojelyn M. Perozo</td></tr>
+    <tr>
+        <th>Sibling(s) Name(s)</th>
+        <td>
+             Sweet Lailani M. Perozo  <br>
+            John Smith M. Perozo <br>
+            Alyssa Khate M. Perozo <br>
+            Shyne Julien M. Perozo <br>
+            Azzelea Abrianna M. Perozo 
+        </td>
+    </tr>
+    <tr><th>Address</th><td>Isla Verde Padayhag Uno, San Carlos Tukuran ZDS</td></tr>
+</table>
+
+
+
+</div>
+<script>
+    document.getElementById("playMusic").addEventListener("click", function() {
+        let audio = document.getElementById("bgMusic");
+        if (audio.paused) {
+            audio.play();
+            this.textContent = "Pause Music";
+        } else {
+            audio.pause();
+            this.textContent = "Play Music";
+        }
+    });
+    
+    </script>
+</body>
+</html>
+
